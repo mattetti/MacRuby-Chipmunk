@@ -1,0 +1,1118 @@
+<?xml version='1.0'?>
+<!DOCTYPE signatures SYSTEM "file://localhost/System/Library/DTDs/BridgeSupport.dtd">
+<signatures version='0.9'>
+<struct name='cpArbiter' type='{cpArbiter=&quot;numContacts&quot;i&quot;contacts&quot;^{cpContact}&quot;private_a&quot;^{cpShape}&quot;private_b&quot;^{cpShape}&quot;e&quot;d&quot;u&quot;d&quot;surface_vr&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;stamp&quot;I&quot;handler&quot;^{cpCollisionHandler}&quot;swappedColl&quot;i&quot;state&quot;i}'/>
+<struct name='cpArray' type='{cpArray=&quot;num&quot;i&quot;max&quot;i&quot;arr&quot;^^v}'/>
+<struct name='cpBB' type='{cpBB=&quot;l&quot;d&quot;b&quot;d&quot;r&quot;d&quot;t&quot;d}'/>
+<struct name='cpBody' type='{cpBody=&quot;velocity_func&quot;^?&quot;position_func&quot;^?&quot;m&quot;d&quot;m_inv&quot;d&quot;i&quot;d&quot;i_inv&quot;d&quot;p&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;v&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;f&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;a&quot;d&quot;w&quot;d&quot;t&quot;d&quot;rot&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;data&quot;^v&quot;v_limit&quot;d&quot;w_limit&quot;d&quot;v_bias&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;w_bias&quot;d&quot;space&quot;^{cpSpace}&quot;shapesList&quot;^{cpShape}&quot;node&quot;{cpComponentNode=&quot;parent&quot;^{cpBody}&quot;next&quot;^{cpBody}&quot;rank&quot;i&quot;idleTime&quot;d}}'/>
+<struct name='cpCircleShape' type='{cpCircleShape=&quot;shape&quot;{cpShape=&quot;klass&quot;^{cpShapeClass}&quot;body&quot;^{cpBody}&quot;bb&quot;{cpBB=&quot;l&quot;d&quot;b&quot;d&quot;r&quot;d&quot;t&quot;d}&quot;sensor&quot;i&quot;e&quot;d&quot;u&quot;d&quot;surface_v&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;data&quot;^v&quot;collision_type&quot;I&quot;group&quot;I&quot;layers&quot;I&quot;next&quot;^{cpShape}&quot;hashid&quot;I}&quot;c&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;r&quot;d&quot;tc&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}}'/>
+<struct name='cpCollisionHandler' type='{cpCollisionHandler=&quot;a&quot;I&quot;b&quot;I&quot;begin&quot;^?&quot;preSolve&quot;^?&quot;postSolve&quot;^?&quot;separate&quot;^?&quot;data&quot;^v}'/>
+<struct name='cpComponentNode' type='{cpComponentNode=&quot;parent&quot;^{cpBody}&quot;next&quot;^{cpBody}&quot;rank&quot;i&quot;idleTime&quot;d}'/>
+<struct name='cpContact' type='{cpContact=&quot;p&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;n&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;dist&quot;d&quot;r1&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;r2&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;nMass&quot;d&quot;tMass&quot;d&quot;bounce&quot;d&quot;jnAcc&quot;d&quot;jtAcc&quot;d&quot;jBias&quot;d&quot;bias&quot;d&quot;hash&quot;I}'/>
+<struct name='cpContactBufferHeader' type='{cpContactBufferHeader=&quot;stamp&quot;I&quot;next&quot;^{cpContactBufferHeader}&quot;numContacts&quot;I}'/>
+<struct name='cpHandle' type='{cpHandle=&quot;obj&quot;^v&quot;retain&quot;i&quot;stamp&quot;I}'/>
+<struct name='cpHashSet' type='{cpHashSet=&quot;entries&quot;i&quot;size&quot;i&quot;eql&quot;^?&quot;trans&quot;^?&quot;default_value&quot;^v&quot;table&quot;^^{cpHashSetBin}&quot;pooledBins&quot;^{cpHashSetBin}&quot;allocatedBuffers&quot;^{cpArray}}'/>
+<struct name='cpHashSetBin' type='{cpHashSetBin=&quot;elt&quot;^v&quot;hash&quot;I&quot;next&quot;^{cpHashSetBin}}'/>
+<struct name='cpPolyShape' type='{cpPolyShape=&quot;shape&quot;{cpShape=&quot;klass&quot;^{cpShapeClass}&quot;body&quot;^{cpBody}&quot;bb&quot;{cpBB=&quot;l&quot;d&quot;b&quot;d&quot;r&quot;d&quot;t&quot;d}&quot;sensor&quot;i&quot;e&quot;d&quot;u&quot;d&quot;surface_v&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;data&quot;^v&quot;collision_type&quot;I&quot;group&quot;I&quot;layers&quot;I&quot;next&quot;^{cpShape}&quot;hashid&quot;I}&quot;numVerts&quot;i&quot;verts&quot;^{cpVect}&quot;axes&quot;^{cpPolyShapeAxis}&quot;tVerts&quot;^{cpVect}&quot;tAxes&quot;^{cpPolyShapeAxis}}'/>
+<struct name='cpPolyShapeAxis' type='{cpPolyShapeAxis=&quot;n&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;d&quot;d}'/>
+<struct name='cpSegmentQueryInfo' type='{cpSegmentQueryInfo=&quot;shape&quot;^{cpShape}&quot;t&quot;d&quot;n&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}}'/>
+<struct name='cpSegmentShape' type='{cpSegmentShape=&quot;shape&quot;{cpShape=&quot;klass&quot;^{cpShapeClass}&quot;body&quot;^{cpBody}&quot;bb&quot;{cpBB=&quot;l&quot;d&quot;b&quot;d&quot;r&quot;d&quot;t&quot;d}&quot;sensor&quot;i&quot;e&quot;d&quot;u&quot;d&quot;surface_v&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;data&quot;^v&quot;collision_type&quot;I&quot;group&quot;I&quot;layers&quot;I&quot;next&quot;^{cpShape}&quot;hashid&quot;I}&quot;a&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;b&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;n&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;r&quot;d&quot;ta&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;tb&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;tn&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}}'/>
+<struct name='cpShape' type='{cpShape=&quot;klass&quot;^{cpShapeClass}&quot;body&quot;^{cpBody}&quot;bb&quot;{cpBB=&quot;l&quot;d&quot;b&quot;d&quot;r&quot;d&quot;t&quot;d}&quot;sensor&quot;i&quot;e&quot;d&quot;u&quot;d&quot;surface_v&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;data&quot;^v&quot;collision_type&quot;I&quot;group&quot;I&quot;layers&quot;I&quot;next&quot;^{cpShape}&quot;hashid&quot;I}'/>
+<struct name='cpShapeClass' type='{cpShapeClass=&quot;type&quot;i&quot;cacheData&quot;^?&quot;destroy&quot;^?&quot;pointQuery&quot;^?&quot;segmentQuery&quot;^?}'/>
+<struct name='cpSpace' type='{cpSpace=&quot;iterations&quot;i&quot;elasticIterations&quot;i&quot;gravity&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;damping&quot;d&quot;idleSpeedThreshold&quot;d&quot;sleepTimeThreshold&quot;d&quot;locked&quot;i&quot;stamp&quot;I&quot;staticShapes&quot;^{cpSpaceHash}&quot;activeShapes&quot;^{cpSpaceHash}&quot;bodies&quot;^{cpArray}&quot;sleepingComponents&quot;^{cpArray}&quot;arbiters&quot;^{cpArray}&quot;pooledArbiters&quot;^{cpArray}&quot;contactBuffersHead&quot;^{cpContactBufferHeader}&quot;_contactBuffersTail&quot;^{cpContactBufferHeader}&quot;allocatedBuffers&quot;^{cpArray}&quot;contactSet&quot;^{cpHashSet}&quot;constraints&quot;^{cpArray}&quot;collFuncSet&quot;^{cpHashSet}&quot;defaultHandler&quot;{cpCollisionHandler=&quot;a&quot;I&quot;b&quot;I&quot;begin&quot;^?&quot;preSolve&quot;^?&quot;postSolve&quot;^?&quot;separate&quot;^?&quot;data&quot;^v}&quot;postStepCallbacks&quot;^{cpHashSet}&quot;staticBody&quot;{cpBody=&quot;velocity_func&quot;^?&quot;position_func&quot;^?&quot;m&quot;d&quot;m_inv&quot;d&quot;i&quot;d&quot;i_inv&quot;d&quot;p&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;v&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;f&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;a&quot;d&quot;w&quot;d&quot;t&quot;d&quot;rot&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;data&quot;^v&quot;v_limit&quot;d&quot;w_limit&quot;d&quot;v_bias&quot;{cpVect=&quot;x&quot;d&quot;y&quot;d}&quot;w_bias&quot;d&quot;space&quot;^{cpSpace}&quot;shapesList&quot;^{cpShape}&quot;node&quot;{cpComponentNode=&quot;parent&quot;^{cpBody}&quot;next&quot;^{cpBody}&quot;rank&quot;i&quot;idleTime&quot;d}}}'/>
+<struct name='cpSpaceHash' type='{cpSpaceHash=&quot;numcells&quot;i&quot;celldim&quot;d&quot;bbfunc&quot;^?&quot;handleSet&quot;^{cpHashSet}&quot;pooledHandles&quot;^{cpArray}&quot;table&quot;^^{cpSpaceHashBin}&quot;pooledBins&quot;^{cpSpaceHashBin}&quot;allocatedBuffers&quot;^{cpArray}&quot;stamp&quot;I}'/>
+<struct name='cpSpaceHashBin' type='{cpSpaceHashBin=&quot;handle&quot;^{cpHandle}&quot;next&quot;^{cpSpaceHashBin}}'/>
+<struct name='cpVect' type='{cpVect=&quot;x&quot;d&quot;y&quot;d}'/>
+<constant name='cpVersionString' type='*'/>
+<constant name='cp_bias_coef' type='d'/>
+<constant name='cp_collision_slop' type='d'/>
+<constant name='cp_contact_persistence' type='I'/>
+<constant name='cpvzero' type='{cpVect=dd}'/>
+<enum name='CP_ALL_LAYERS' value='4294967295'/>
+<enum name='CP_BUFFER_BYTES' value='32768'/>
+<enum name='CP_CIRCLE_SHAPE' value='0'/>
+<enum name='CP_HASH_COEF' value='3344921057'/>
+<enum name='CP_MAX_CONTACTS_PER_ARBITER' value='6'/>
+<enum name='CP_NO_GROUP' value='0'/>
+<enum name='CP_NUM_SHAPES' value='3'/>
+<enum name='CP_POLY_SHAPE' value='2'/>
+<enum name='CP_SEGMENT_SHAPE' value='1'/>
+<enum name='CP_USE_DOUBLES' value='1'/>
+<enum name='cpArbiterStateCached' value='4'/>
+<enum name='cpArbiterStateFirstColl' value='1'/>
+<enum name='cpArbiterStateIgnore' value='2'/>
+<enum name='cpArbiterStateNormal' value='0'/>
+<enum name='cpArbiterStateSleep' value='3'/>
+<enum name='cpFalse' value='0'/>
+<enum name='cpTrue' value='1'/>
+<function name='cpApplyDampedSpring'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='d'/>
+<arg type='d'/>
+<arg type='d'/>
+<arg type='d'/>
+</function>
+<function name='cpArbiterApplyCachedImpulse'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+</function>
+<function name='cpArbiterApplyImpulse'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<arg type='d'/>
+</function>
+<function name='cpArbiterGetBodies' inline='true'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<arg type='^^{cpBody}'/>
+<arg type='^^{cpBody}'/>
+</function>
+<function name='cpArbiterGetNormal' inline='true'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<arg type='i'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpArbiterGetPoint' inline='true'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<arg type='i'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpArbiterGetShapes' inline='true'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<arg type='^^{cpShape}'/>
+<arg type='^^{cpShape}'/>
+</function>
+<function name='cpArbiterIgnore'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+</function>
+<function name='cpArbiterInit'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<retval type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+</function>
+<function name='cpArbiterIsFirstContact' inline='true'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<retval type='i'/>
+</function>
+<function name='cpArbiterPreStep'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<arg type='d'/>
+</function>
+<function name='cpArbiterTotalImpulse'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpArbiterTotalImpulseWithFriction'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpArbiterUpdate'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<arg type='^{cpContact={cpVect=dd}{cpVect=dd}d{cpVect=dd}{cpVect=dd}dddddddI}'/>
+<arg type='i'/>
+<arg type='^{cpCollisionHandler=II^?^?^?^?^v}'/>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+</function>
+<function name='cpArrayAlloc'>
+<retval type='^{cpArray=ii^^v}'/>
+</function>
+<function name='cpArrayAppend'>
+<arg type='^{cpArray=ii^^v}'/>
+<arg type='^{cpArray=ii^^v}'/>
+</function>
+<function name='cpArrayClear'>
+<arg type='^{cpArray=ii^^v}'/>
+</function>
+<function name='cpArrayContains'>
+<arg type='^{cpArray=ii^^v}'/>
+<arg type='^v'/>
+<retval type='i'/>
+</function>
+<function name='cpArrayDeleteIndex'>
+<arg type='^{cpArray=ii^^v}'/>
+<arg type='i'/>
+</function>
+<function name='cpArrayDeleteObj'>
+<arg type='^{cpArray=ii^^v}'/>
+<arg type='^v'/>
+</function>
+<function name='cpArrayDestroy'>
+<arg type='^{cpArray=ii^^v}'/>
+</function>
+<function name='cpArrayEach'>
+<arg type='^{cpArray=ii^^v}'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^v'/>
+<arg type='^v'/>
+<retval type='v'/>
+</arg>
+<arg type='^v'/>
+</function>
+<function name='cpArrayFree'>
+<arg type='^{cpArray=ii^^v}'/>
+</function>
+<function name='cpArrayInit'>
+<arg type='^{cpArray=ii^^v}'/>
+<arg type='i'/>
+<retval type='^{cpArray=ii^^v}'/>
+</function>
+<function name='cpArrayNew'>
+<arg type='i'/>
+<retval type='^{cpArray=ii^^v}'/>
+</function>
+<function name='cpArrayPop'>
+<arg type='^{cpArray=ii^^v}'/>
+<retval type='^v'/>
+</function>
+<function name='cpArrayPush'>
+<arg type='^{cpArray=ii^^v}'/>
+<arg type='^v'/>
+</function>
+<function name='cpBBClampVect'>
+<arg type='{cpBB=dddd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpBBNew' inline='true'>
+<arg type='d'/>
+<arg type='d'/>
+<arg type='d'/>
+<arg type='d'/>
+<retval type='{cpBB=dddd}'/>
+</function>
+<function name='cpBBWrapVect'>
+<arg type='{cpBB=dddd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpBBcontainsBB' inline='true'>
+<arg type='{cpBB=dddd}'/>
+<arg type='{cpBB=dddd}'/>
+<retval type='i'/>
+</function>
+<function name='cpBBcontainsVect' inline='true'>
+<arg type='{cpBB=dddd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='i'/>
+</function>
+<function name='cpBBexpand' inline='true'>
+<arg type='{cpBB=dddd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='{cpBB=dddd}'/>
+</function>
+<function name='cpBBintersects' inline='true'>
+<arg type='{cpBB=dddd}'/>
+<arg type='{cpBB=dddd}'/>
+<retval type='i'/>
+</function>
+<function name='cpBBmerge' inline='true'>
+<arg type='{cpBB=dddd}'/>
+<arg type='{cpBB=dddd}'/>
+<retval type='{cpBB=dddd}'/>
+</function>
+<function name='cpBodyActivate'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+</function>
+<function name='cpBodyAlloc'>
+<retval type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+</function>
+<function name='cpBodyApplyForce'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+</function>
+<function name='cpBodyApplyImpulse' inline='true'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+</function>
+<function name='cpBodyDestroy'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+</function>
+<function name='cpBodyFree'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+</function>
+<function name='cpBodyInit'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='d'/>
+<arg type='d'/>
+<retval type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+</function>
+<function name='cpBodyIsRogue' inline='true'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<retval type='i'/>
+</function>
+<function name='cpBodyIsSleeping' inline='true'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<retval type='i'/>
+</function>
+<function name='cpBodyIsStatic'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<retval type='i'/>
+</function>
+<function name='cpBodyKineticEnergy' inline='true'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<retval type='d'/>
+</function>
+<function name='cpBodyLocal2World' inline='true'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpBodyNew'>
+<arg type='d'/>
+<arg type='d'/>
+<retval type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+</function>
+<function name='cpBodyResetForces'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+</function>
+<function name='cpBodySetAngle'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='d'/>
+</function>
+<function name='cpBodySetMass'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='d'/>
+</function>
+<function name='cpBodySetMoment'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='d'/>
+</function>
+<function name='cpBodySleep'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+</function>
+<function name='cpBodySlew'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='d'/>
+</function>
+<function name='cpBodyUpdatePosition'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='d'/>
+</function>
+<function name='cpBodyUpdateVelocity'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='d'/>
+<arg type='d'/>
+</function>
+<function name='cpBodyWorld2Local' inline='true'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpBoxShapeInit'>
+<arg type='^{cpPolyShape={cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}i^{cpVect}^{cpPolyShapeAxis}^{cpVect}^{cpPolyShapeAxis}}'/>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='d'/>
+<arg type='d'/>
+<retval type='^{cpPolyShape={cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}i^{cpVect}^{cpPolyShapeAxis}^{cpVect}^{cpPolyShapeAxis}}'/>
+</function>
+<function name='cpBoxShapeNew'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='d'/>
+<arg type='d'/>
+<retval type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+</function>
+<function name='cpCircleShapeAlloc'>
+<retval type='^{cpCircleShape={cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}{cpVect=dd}d{cpVect=dd}}'/>
+</function>
+<function name='cpCircleShapeInit'>
+<arg type='^{cpCircleShape={cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}{cpVect=dd}d{cpVect=dd}}'/>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='d'/>
+<arg type='{cpVect=dd}'/>
+<retval type='^{cpCircleShape={cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}{cpVect=dd}d{cpVect=dd}}'/>
+</function>
+<function name='cpCircleShapeNew'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='d'/>
+<arg type='{cpVect=dd}'/>
+<retval type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+</function>
+<function name='cpCircleShapeSetOffset'>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<arg type='{cpVect=dd}'/>
+</function>
+<function name='cpCircleShapeSetRadius'>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<arg type='d'/>
+</function>
+<function name='cpCollideShapes'>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<arg type='^{cpContact={cpVect=dd}{cpVect=dd}d{cpVect=dd}{cpVect=dd}dddddddI}'/>
+<retval type='i'/>
+</function>
+<function name='cpContactInit'>
+<arg type='^{cpContact={cpVect=dd}{cpVect=dd}d{cpVect=dd}{cpVect=dd}dddddddI}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='d'/>
+<arg type='I'/>
+<retval type='^{cpContact={cpVect=dd}{cpVect=dd}d{cpVect=dd}{cpVect=dd}dddddddI}'/>
+</function>
+<function name='cpContactsSumImpulses'>
+<arg type='^{cpContact={cpVect=dd}{cpVect=dd}d{cpVect=dd}{cpVect=dd}dddddddI}'/>
+<arg type='i'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpContactsSumImpulsesWithFriction'>
+<arg type='^{cpContact={cpVect=dd}{cpVect=dd}d{cpVect=dd}{cpVect=dd}dddddddI}'/>
+<arg type='i'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpHashSetAlloc'>
+<retval type='^{cpHashSet=ii^?^?^v^^{cpHashSetBin}^{cpHashSetBin}^{cpArray}}'/>
+</function>
+<function name='cpHashSetDestroy'>
+<arg type='^{cpHashSet=ii^?^?^v^^{cpHashSetBin}^{cpHashSetBin}^{cpArray}}'/>
+</function>
+<function name='cpHashSetEach'>
+<arg type='^{cpHashSet=ii^?^?^v^^{cpHashSetBin}^{cpHashSetBin}^{cpArray}}'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^v'/>
+<arg type='^v'/>
+<retval type='v'/>
+</arg>
+<arg type='^v'/>
+</function>
+<function name='cpHashSetFilter'>
+<arg type='^{cpHashSet=ii^?^?^v^^{cpHashSetBin}^{cpHashSetBin}^{cpArray}}'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^v'/>
+<arg type='^v'/>
+<retval type='i'/>
+</arg>
+<arg type='^v'/>
+</function>
+<function name='cpHashSetFind'>
+<arg type='^{cpHashSet=ii^?^?^v^^{cpHashSetBin}^{cpHashSetBin}^{cpArray}}'/>
+<arg type='I'/>
+<arg type='^v'/>
+<retval type='^v'/>
+</function>
+<function name='cpHashSetFree'>
+<arg type='^{cpHashSet=ii^?^?^v^^{cpHashSetBin}^{cpHashSetBin}^{cpArray}}'/>
+</function>
+<function name='cpHashSetInit'>
+<arg type='^{cpHashSet=ii^?^?^v^^{cpHashSetBin}^{cpHashSetBin}^{cpArray}}'/>
+<arg type='i'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^v'/>
+<arg type='^v'/>
+<retval type='i'/>
+</arg>
+<arg function_pointer='true' type='^?'>
+<arg type='^v'/>
+<arg type='^v'/>
+<retval type='^v'/>
+</arg>
+<retval type='^{cpHashSet=ii^?^?^v^^{cpHashSetBin}^{cpHashSetBin}^{cpArray}}'/>
+</function>
+<function name='cpHashSetInsert'>
+<arg type='^{cpHashSet=ii^?^?^v^^{cpHashSetBin}^{cpHashSetBin}^{cpArray}}'/>
+<arg type='I'/>
+<arg type='^v'/>
+<arg type='^v'/>
+<retval type='^v'/>
+</function>
+<function name='cpHashSetNew'>
+<arg type='i'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^v'/>
+<arg type='^v'/>
+<retval type='i'/>
+</arg>
+<arg function_pointer='true' type='^?'>
+<arg type='^v'/>
+<arg type='^v'/>
+<retval type='^v'/>
+</arg>
+<retval type='^{cpHashSet=ii^?^?^v^^{cpHashSetBin}^{cpHashSetBin}^{cpArray}}'/>
+</function>
+<function name='cpHashSetRemove'>
+<arg type='^{cpHashSet=ii^?^?^v^^{cpHashSetBin}^{cpHashSetBin}^{cpArray}}'/>
+<arg type='I'/>
+<arg type='^v'/>
+<retval type='^v'/>
+</function>
+<function name='cpInitChipmunk'/>
+<function name='cpMessage'>
+<arg type='*'/>
+<arg type='*'/>
+<arg type='*'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='cpMomentForBox'>
+<arg type='d'/>
+<arg type='d'/>
+<arg type='d'/>
+<retval type='d'/>
+</function>
+<function name='cpMomentForCircle'>
+<arg type='d'/>
+<arg type='d'/>
+<arg type='d'/>
+<arg type='{cpVect=dd}'/>
+<retval type='d'/>
+</function>
+<function name='cpMomentForPoly'>
+<arg type='d'/>
+<arg type='i'/>
+<arg type='^{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='d'/>
+</function>
+<function name='cpMomentForSegment'>
+<arg type='d'/>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='d'/>
+</function>
+<function name='cpPolyShapeAlloc'>
+<retval type='^{cpPolyShape={cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}i^{cpVect}^{cpPolyShapeAxis}^{cpVect}^{cpPolyShapeAxis}}'/>
+</function>
+<function name='cpPolyShapeContainsVert' inline='true'>
+<arg type='^{cpPolyShape={cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}i^{cpVect}^{cpPolyShapeAxis}^{cpVect}^{cpPolyShapeAxis}}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='i'/>
+</function>
+<function name='cpPolyShapeContainsVertPartial' inline='true'>
+<arg type='^{cpPolyShape={cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}i^{cpVect}^{cpPolyShapeAxis}^{cpVect}^{cpPolyShapeAxis}}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='i'/>
+</function>
+<function name='cpPolyShapeGetNumVerts'>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<retval type='i'/>
+</function>
+<function name='cpPolyShapeGetVert'>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<arg type='i'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpPolyShapeInit'>
+<arg type='^{cpPolyShape={cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}i^{cpVect}^{cpPolyShapeAxis}^{cpVect}^{cpPolyShapeAxis}}'/>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='i'/>
+<arg type='^{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='^{cpPolyShape={cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}i^{cpVect}^{cpPolyShapeAxis}^{cpVect}^{cpPolyShapeAxis}}'/>
+</function>
+<function name='cpPolyShapeNew'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='i'/>
+<arg type='^{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+</function>
+<function name='cpPolyShapeSetVerts'>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<arg type='i'/>
+<arg type='^{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+</function>
+<function name='cpPolyShapeValueOnAxis' inline='true'>
+<arg type='^{cpPolyShape={cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}i^{cpVect}^{cpPolyShapeAxis}^{cpVect}^{cpPolyShapeAxis}}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='d'/>
+<retval type='d'/>
+</function>
+<function name='cpPolyValidate'>
+<arg type='^{cpVect=dd}'/>
+<arg type='i'/>
+<retval type='i'/>
+</function>
+<function name='cpResetShapeIdCounter'/>
+<function name='cpSegmentQueryHitDist' inline='true'>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpSegmentQueryInfo=^{cpShape}d{cpVect=dd}}'/>
+<retval type='d'/>
+</function>
+<function name='cpSegmentQueryHitPoint' inline='true'>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpSegmentQueryInfo=^{cpShape}d{cpVect=dd}}'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpSegmentQueryInfoPrint'>
+<arg type='^{cpSegmentQueryInfo=^{cpShape}d{cpVect=dd}}'/>
+</function>
+<function name='cpSegmentShapeAlloc'>
+<retval type='^{cpSegmentShape={cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}{cpVect=dd}{cpVect=dd}{cpVect=dd}d{cpVect=dd}{cpVect=dd}{cpVect=dd}}'/>
+</function>
+<function name='cpSegmentShapeInit'>
+<arg type='^{cpSegmentShape={cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}{cpVect=dd}{cpVect=dd}{cpVect=dd}d{cpVect=dd}{cpVect=dd}{cpVect=dd}}'/>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='d'/>
+<retval type='^{cpSegmentShape={cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}{cpVect=dd}{cpVect=dd}{cpVect=dd}d{cpVect=dd}{cpVect=dd}{cpVect=dd}}'/>
+</function>
+<function name='cpSegmentShapeNew'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='d'/>
+<retval type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+</function>
+<function name='cpSegmentShapeSetEndpoints'>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+</function>
+<function name='cpSegmentShapeSetRadius'>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<arg type='d'/>
+</function>
+<function name='cpShapeCacheBB'>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<retval type='{cpBB=dddd}'/>
+</function>
+<function name='cpShapeDestroy'>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+</function>
+<function name='cpShapeFree'>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+</function>
+<function name='cpShapeInit'>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<arg type='^{cpShapeClass=i^?^?^?^?}'/>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<retval type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+</function>
+<function name='cpShapePointQuery'>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='i'/>
+</function>
+<function name='cpShapeSegmentQuery'>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='^{cpSegmentQueryInfo=^{cpShape}d{cpVect=dd}}'/>
+<retval type='i'/>
+</function>
+<function name='cpSpaceAddBody'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<retval type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+</function>
+<function name='cpSpaceAddCollisionHandler'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^v'/>
+<retval type='i'/>
+</arg>
+<arg function_pointer='true' type='^?'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^v'/>
+<retval type='i'/>
+</arg>
+<arg function_pointer='true' type='^?'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^v'/>
+<retval type='v'/>
+</arg>
+<arg function_pointer='true' type='^?'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^v'/>
+<retval type='v'/>
+</arg>
+<arg type='^v'/>
+</function>
+<function name='cpSpaceAddConstraint'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^{cpConstraint=^{cpConstraintClass}^{cpBody}^{cpBody}ddd^v}'/>
+<retval type='^{cpConstraint=^{cpConstraintClass}^{cpBody}^{cpBody}ddd^v}'/>
+</function>
+<function name='cpSpaceAddPostStepCallback'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^v'/>
+<arg type='^v'/>
+<retval type='v'/>
+</arg>
+<arg type='^v'/>
+<arg type='^v'/>
+</function>
+<function name='cpSpaceAddShape'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<retval type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+</function>
+<function name='cpSpaceAddStaticShape'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<retval type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+</function>
+<function name='cpSpaceAlloc'>
+<retval type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+</function>
+<function name='cpSpaceBBQuery'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='{cpBB=dddd}'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<arg type='^v'/>
+<retval type='v'/>
+</arg>
+<arg type='^v'/>
+</function>
+<function name='cpSpaceDestroy'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+</function>
+<function name='cpSpaceEachBody'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+<arg type='^v'/>
+<retval type='v'/>
+</arg>
+<arg type='^v'/>
+</function>
+<function name='cpSpaceFree'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+</function>
+<function name='cpSpaceFreeChildren'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+</function>
+<function name='cpSpaceHashAlloc'>
+<retval type='^{cpSpaceHash=id^?^{cpHashSet}^{cpArray}^^{cpSpaceHashBin}^{cpSpaceHashBin}^{cpArray}I}'/>
+</function>
+<function name='cpSpaceHashDestroy'>
+<arg type='^{cpSpaceHash=id^?^{cpHashSet}^{cpArray}^^{cpSpaceHashBin}^{cpSpaceHashBin}^{cpArray}I}'/>
+</function>
+<function name='cpSpaceHashEach'>
+<arg type='^{cpSpaceHash=id^?^{cpHashSet}^{cpArray}^^{cpSpaceHashBin}^{cpSpaceHashBin}^{cpArray}I}'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^v'/>
+<arg type='^v'/>
+<retval type='v'/>
+</arg>
+<arg type='^v'/>
+</function>
+<function name='cpSpaceHashFree'>
+<arg type='^{cpSpaceHash=id^?^{cpHashSet}^{cpArray}^^{cpSpaceHashBin}^{cpSpaceHashBin}^{cpArray}I}'/>
+</function>
+<function name='cpSpaceHashInit'>
+<arg type='^{cpSpaceHash=id^?^{cpHashSet}^{cpArray}^^{cpSpaceHashBin}^{cpSpaceHashBin}^{cpArray}I}'/>
+<arg type='d'/>
+<arg type='i'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^v'/>
+<retval type='{cpBB=dddd}'/>
+</arg>
+<retval type='^{cpSpaceHash=id^?^{cpHashSet}^{cpArray}^^{cpSpaceHashBin}^{cpSpaceHashBin}^{cpArray}I}'/>
+</function>
+<function name='cpSpaceHashInsert'>
+<arg type='^{cpSpaceHash=id^?^{cpHashSet}^{cpArray}^^{cpSpaceHashBin}^{cpSpaceHashBin}^{cpArray}I}'/>
+<arg type='^v'/>
+<arg type='I'/>
+<arg type='{cpBB=dddd}'/>
+</function>
+<function name='cpSpaceHashNew'>
+<arg type='d'/>
+<arg type='i'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^v'/>
+<retval type='{cpBB=dddd}'/>
+</arg>
+<retval type='^{cpSpaceHash=id^?^{cpHashSet}^{cpArray}^^{cpSpaceHashBin}^{cpSpaceHashBin}^{cpArray}I}'/>
+</function>
+<function name='cpSpaceHashPointQuery'>
+<arg type='^{cpSpaceHash=id^?^{cpHashSet}^{cpArray}^^{cpSpaceHashBin}^{cpSpaceHashBin}^{cpArray}I}'/>
+<arg type='{cpVect=dd}'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^v'/>
+<arg type='^v'/>
+<arg type='^v'/>
+<retval type='v'/>
+</arg>
+<arg type='^v'/>
+</function>
+<function name='cpSpaceHashQuery'>
+<arg type='^{cpSpaceHash=id^?^{cpHashSet}^{cpArray}^^{cpSpaceHashBin}^{cpSpaceHashBin}^{cpArray}I}'/>
+<arg type='^v'/>
+<arg type='{cpBB=dddd}'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^v'/>
+<arg type='^v'/>
+<arg type='^v'/>
+<retval type='v'/>
+</arg>
+<arg type='^v'/>
+</function>
+<function name='cpSpaceHashQueryInsert'>
+<arg type='^{cpSpaceHash=id^?^{cpHashSet}^{cpArray}^^{cpSpaceHashBin}^{cpSpaceHashBin}^{cpArray}I}'/>
+<arg type='^v'/>
+<arg type='{cpBB=dddd}'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^v'/>
+<arg type='^v'/>
+<arg type='^v'/>
+<retval type='v'/>
+</arg>
+<arg type='^v'/>
+</function>
+<function name='cpSpaceHashQueryRehash'>
+<arg type='^{cpSpaceHash=id^?^{cpHashSet}^{cpArray}^^{cpSpaceHashBin}^{cpSpaceHashBin}^{cpArray}I}'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^v'/>
+<arg type='^v'/>
+<arg type='^v'/>
+<retval type='v'/>
+</arg>
+<arg type='^v'/>
+</function>
+<function name='cpSpaceHashRehash'>
+<arg type='^{cpSpaceHash=id^?^{cpHashSet}^{cpArray}^^{cpSpaceHashBin}^{cpSpaceHashBin}^{cpArray}I}'/>
+</function>
+<function name='cpSpaceHashRehashObject'>
+<arg type='^{cpSpaceHash=id^?^{cpHashSet}^{cpArray}^^{cpSpaceHashBin}^{cpSpaceHashBin}^{cpArray}I}'/>
+<arg type='^v'/>
+<arg type='I'/>
+</function>
+<function name='cpSpaceHashRemove'>
+<arg type='^{cpSpaceHash=id^?^{cpHashSet}^{cpArray}^^{cpSpaceHashBin}^{cpSpaceHashBin}^{cpArray}I}'/>
+<arg type='^v'/>
+<arg type='I'/>
+</function>
+<function name='cpSpaceHashResize'>
+<arg type='^{cpSpaceHash=id^?^{cpHashSet}^{cpArray}^^{cpSpaceHashBin}^{cpSpaceHashBin}^{cpArray}I}'/>
+<arg type='d'/>
+<arg type='i'/>
+</function>
+<function name='cpSpaceHashSegmentQuery'>
+<arg type='^{cpSpaceHash=id^?^{cpHashSet}^{cpArray}^^{cpSpaceHashBin}^{cpSpaceHashBin}^{cpArray}I}'/>
+<arg type='^v'/>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='d'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^v'/>
+<arg type='^v'/>
+<arg type='^v'/>
+<retval type='d'/>
+</arg>
+<arg type='^v'/>
+</function>
+<function name='cpSpaceInit'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<retval type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+</function>
+<function name='cpSpaceNew'>
+<retval type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+</function>
+<function name='cpSpacePointQuery'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<arg type='^v'/>
+<retval type='v'/>
+</arg>
+<arg type='^v'/>
+</function>
+<function name='cpSpacePointQueryFirst'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='I'/>
+<arg type='I'/>
+<retval type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+</function>
+<function name='cpSpaceRehashShape'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+</function>
+<function name='cpSpaceRehashStatic'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+</function>
+<function name='cpSpaceRemoveBody'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}'/>
+</function>
+<function name='cpSpaceRemoveCollisionHandler'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='I'/>
+<arg type='I'/>
+</function>
+<function name='cpSpaceRemoveConstraint'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^{cpConstraint=^{cpConstraintClass}^{cpBody}^{cpBody}ddd^v}'/>
+</function>
+<function name='cpSpaceRemoveShape'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+</function>
+<function name='cpSpaceRemoveStaticShape'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+</function>
+<function name='cpSpaceResizeActiveHash'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='d'/>
+<arg type='i'/>
+</function>
+<function name='cpSpaceResizeStaticHash'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='d'/>
+<arg type='i'/>
+</function>
+<function name='cpSpaceSegmentQuery'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+<arg type='d'/>
+<arg type='{cpVect=dd}'/>
+<arg type='^v'/>
+<retval type='v'/>
+</arg>
+<arg type='^v'/>
+</function>
+<function name='cpSpaceSegmentQueryFirst'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^{cpSegmentQueryInfo=^{cpShape}d{cpVect=dd}}'/>
+<retval type='^{cpShape=^{cpShapeClass}^{cpBody}{cpBB=dddd}idd{cpVect=dd}^vIII^{cpShape}I}'/>
+</function>
+<function name='cpSpaceSetDefaultCollisionHandler'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg function_pointer='true' type='^?'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^v'/>
+<retval type='i'/>
+</arg>
+<arg function_pointer='true' type='^?'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^v'/>
+<retval type='i'/>
+</arg>
+<arg function_pointer='true' type='^?'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^v'/>
+<retval type='v'/>
+</arg>
+<arg function_pointer='true' type='^?'>
+<arg type='^{cpArbiter=i^{cpContact}^{cpShape}^{cpShape}dd{cpVect=dd}I^{cpCollisionHandler}ii}'/>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='^v'/>
+<retval type='v'/>
+</arg>
+<arg type='^v'/>
+</function>
+<function name='cpSpaceStep'>
+<arg type='^{cpSpace=ii{cpVect=dd}dddiI^{cpSpaceHash}^{cpSpaceHash}^{cpArray}^{cpArray}^{cpArray}^{cpArray}^{cpContactBufferHeader}^{cpContactBufferHeader}^{cpArray}^{cpHashSet}^{cpArray}^{cpHashSet}{cpCollisionHandler=II^?^?^?^?^v}^{cpHashSet}{cpBody=^?^?dddd{cpVect=dd}{cpVect=dd}{cpVect=dd}ddd{cpVect=dd}^vdd{cpVect=dd}d^{cpSpace}^{cpShape}{cpComponentNode=^{cpBody}^{cpBody}id}}}'/>
+<arg type='d'/>
+</function>
+<function name='cpfabs' inline='true'>
+<arg type='d'/>
+<retval type='d'/>
+</function>
+<function name='cpfclamp' inline='true'>
+<arg type='d'/>
+<arg type='d'/>
+<arg type='d'/>
+<retval type='d'/>
+</function>
+<function name='cpflerp' inline='true'>
+<arg type='d'/>
+<arg type='d'/>
+<arg type='d'/>
+<retval type='d'/>
+</function>
+<function name='cpflerpconst' inline='true'>
+<arg type='d'/>
+<arg type='d'/>
+<arg type='d'/>
+<retval type='d'/>
+</function>
+<function name='cpfmax' inline='true'>
+<arg type='d'/>
+<arg type='d'/>
+<retval type='d'/>
+</function>
+<function name='cpfmin' inline='true'>
+<arg type='d'/>
+<arg type='d'/>
+<retval type='d'/>
+</function>
+<function name='cpv' inline='true'>
+<arg type='d'/>
+<arg type='d'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpvadd' inline='true'>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpvclamp' inline='true'>
+<arg type='{cpVect=dd}'/>
+<arg type='d'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpvcross' inline='true'>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='d'/>
+</function>
+<function name='cpvdist' inline='true'>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='d'/>
+</function>
+<function name='cpvdistsq' inline='true'>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='d'/>
+</function>
+<function name='cpvdot' inline='true'>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='d'/>
+</function>
+<function name='cpveql' inline='true'>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='i'/>
+</function>
+<function name='cpvforangle'>
+<arg type='d'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpvlength'>
+<arg type='{cpVect=dd}'/>
+<retval type='d'/>
+</function>
+<function name='cpvlengthsq' inline='true'>
+<arg type='{cpVect=dd}'/>
+<retval type='d'/>
+</function>
+<function name='cpvlerp' inline='true'>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='d'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpvlerpconst' inline='true'>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='d'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpvmult' inline='true'>
+<arg type='{cpVect=dd}'/>
+<arg type='d'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpvnear' inline='true'>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='d'/>
+<retval type='i'/>
+</function>
+<function name='cpvneg' inline='true'>
+<arg type='{cpVect=dd}'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpvnormalize' inline='true'>
+<arg type='{cpVect=dd}'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpvnormalize_safe' inline='true'>
+<arg type='{cpVect=dd}'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpvperp' inline='true'>
+<arg type='{cpVect=dd}'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpvproject' inline='true'>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpvrotate' inline='true'>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpvrperp' inline='true'>
+<arg type='{cpVect=dd}'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpvslerp'>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='d'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpvslerpconst'>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<arg type='d'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpvstr'>
+<arg type='{cpVect=dd}'/>
+<retval type='*'/>
+</function>
+<function name='cpvsub' inline='true'>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function name='cpvtoangle'>
+<arg type='{cpVect=dd}'/>
+<retval type='d'/>
+</function>
+<function name='cpvunrotate' inline='true'>
+<arg type='{cpVect=dd}'/>
+<arg type='{cpVect=dd}'/>
+<retval type='{cpVect=dd}'/>
+</function>
+<function_alias name='cpcalloc' original='calloc'/>
+<function_alias name='cpfacos' original='acos'/>
+<function_alias name='cpfatan2' original='atan2'/>
+<function_alias name='cpfceil' original='ceil'/>
+<function_alias name='cpfcos' original='cos'/>
+<function_alias name='cpfexp' original='exp'/>
+<function_alias name='cpffloor' original='floor'/>
+<function_alias name='cpfmod' original='fmod'/>
+<function_alias name='cpfpow' original='pow'/>
+<function_alias name='cpfree' original='free'/>
+<function_alias name='cpfsin' original='sin'/>
+<function_alias name='cpfsqrt' original='sqrt'/>
+<function_alias name='cpmalloc' original='malloc'/>
+<function_alias name='cprealloc' original='realloc'/>
+</signatures>
